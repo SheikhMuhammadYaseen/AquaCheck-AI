@@ -5,7 +5,7 @@
 
 import { CityWaterData, CityLookupResult } from '../types/city';
 import { RiskProjection } from '../types/health';
-import waterDataRaw from '../../data/water-by-city.json' assert { type: 'json' };
+import waterDataRaw from '../../data/water-by-city.json' with { type: 'json' };
 
 let waterData = [...waterDataRaw] as CityWaterData[];
 

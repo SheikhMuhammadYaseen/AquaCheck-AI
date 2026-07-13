@@ -7,7 +7,6 @@ import express from 'express';
 import path from 'path';
 import fs from 'fs';
 import dotenv from 'dotenv';
-import { createServer as createViteServer } from 'vite';
 import { analyzeWaterImage, getCitySummary, getCityProjectionNarrative, answerWaterQuery } from './src/lib/gemini.js';
 import { getCityData, calculateProjection, getRawWaterData, setCitiesInMemoryCache, updateCityInMemoryCache } from './src/lib/cityData.js';
 import { CommunityReport, ReportSubmission } from './src/types/report.js';
@@ -504,7 +503,8 @@ async function startServer() {
   await initializeDatabase();
 
   if (process.env.NODE_ENV !== 'production') {
-    // Create Vite server in middleware mode
+    // Create Vite server in middleware mode (dynamic import to avoid Vercel bundling issues)
+    const { createServer: createViteServer } = await import('vite');
     const vite = await createViteServer({
       server: { middlewareMode: true },
       appType: 'spa',
