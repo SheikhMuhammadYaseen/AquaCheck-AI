@@ -69,20 +69,12 @@ function getGenAI(): GoogleGenAI {
   return aiInstance;
 }
 
-// Keep track of rate limit / quota exhaustion status to avoid spamming failed requests
-let quotaExhaustedUntil = 0;
-
 // Helper to call Gemini with retries and fallback models, falling back to a deterministic backup if all else fails
 async function callGeminiWithFallback<T>(
   actionName: string,
   fn: (modelName: string) => Promise<T>,
   deterministicFallback: () => T
 ): Promise<T> {
-  if (Date.now() < quotaExhaustedUntil) {
-    console.log(`[Gemini API] Quota is currently marked as exhausted. Using deterministic fallback immediately for ${actionName}.`);
-    return deterministicFallback();
-  }
-
   const models = ["gemini-3.5-flash", "gemini-2.5-flash", "gemini-2.0-flash"];
   const maxRetriesPerModel = 2;
   let lastError: any = null;
@@ -109,8 +101,7 @@ async function callGeminiWithFallback<T>(
           String(error?.message).includes('RESOURCE_EXHAUSTED');
 
         if (isQuotaExhausted) {
-          console.warn(`[Gemini API] Quota limit hit (429/RESOURCE_EXHAUSTED) during ${actionName}. Activating 30-second circuit breaker and returning local fallback.`);
-          quotaExhaustedUntil = Date.now() + 30 * 1000; // 30 seconds
+          console.warn(`[Gemini API] Quota limit hit (429/RESOURCE_EXHAUSTED) during ${actionName}. Returning local fallback.`);
           return deterministicFallback();
         }
 
