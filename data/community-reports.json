@@ -1,0 +1,115 @@
+[
+  {
+    "id": "rep-zrh-4",
+    "created_at": "2026-07-11T10:10:00.000Z",
+    "country": "Switzerland",
+    "city": "Zurich",
+    "location_description": "Lindenhof Fountain",
+    "display_name": "Elena G.",
+    "description": "Tested the public drinking water fountain at Lindenhof. Absolute crystal clear water, perfect neutral pH around 7.2, low TDS. Tastes amazing. One of the best water networks on earth.",
+    "image_url": null,
+    "safety_score": 10,
+    "verdict": "PRISTINE QUALITY",
+    "color_detected": "Crystal Clear",
+    "contaminants": [
+      "Natural Minerals (Calcium)"
+    ],
+    "health_risks": [],
+    "needs_review": false,
+    "language": "en"
+  },
+  {
+    "id": "rep-isb-5",
+    "created_at": "2026-07-11T06:00:00.000Z",
+    "country": "Pakistan",
+    "city": "Islamabad",
+    "location_description": "Sector F-11",
+    "display_name": "Asim Ali",
+    "description": "The municipal supply in F-11 has a slight muddy appearance after the monsoon showers yesterday. TDS is normal at 180 ppm, but turbidity is higher than usual. Recommend using a standard sediment filter.",
+    "image_url": null,
+    "safety_score": 6,
+    "verdict": "MODERATE TURBIDITY DURING MONSOON",
+    "color_detected": "Slightly Hazy",
+    "contaminants": [
+      "Suspended Solids (Clay/Silt)",
+      "Turbidity"
+    ],
+    "health_risks": [
+      "Mild Gastrointestinal Discomfort if untreated"
+    ],
+    "needs_review": false,
+    "language": "en"
+  },
+  {
+    "id": "rep-khi-1",
+    "created_at": "2026-07-10T14:32:00.000Z",
+    "country": "Pakistan",
+    "city": "Karachi",
+    "location_description": "DHA Phase 5, Street 12",
+    "display_name": "Zainab Malik",
+    "description": "Strong odor resembling sewer gas coming from our main tap today. The water has a pale yellow tint. Boiling it helps with pathogens but the smell remains strong. Hoping other residents in the sector can verify if they have the same issue.",
+    "image_url": null,
+    "safety_score": 3,
+    "verdict": "BACTERIAL CONTAMINATION SUSPECTED",
+    "color_detected": "Cloudy Pale Yellow",
+    "contaminants": [
+      "E. coli",
+      "Fecal Coliforms",
+      "Hydrogen Sulfide (Odor)"
+    ],
+    "health_risks": [
+      "Gastroenteritis",
+      "Typhoid Risk",
+      "Skin Rashes"
+    ],
+    "needs_review": false,
+    "language": "en"
+  },
+  {
+    "id": "rep-mia-2",
+    "created_at": "2026-07-09T08:15:00.000Z",
+    "country": "United States",
+    "city": "Miami",
+    "location_description": "Downtown Miami",
+    "display_name": "Robert J.",
+    "description": "Tested our condo tap water with a standard TDS pen. TDS is around 240 ppm, which is safe, but there's a strong smell of chlorine in the mornings. Spoke to building management, they confirmed the city increased dosing slightly after heavy rainfalls.",
+    "image_url": null,
+    "safety_score": 8,
+    "verdict": "SAFE (HIGH CHLORINE RESIDUAL)",
+    "color_detected": "Crystal Clear",
+    "contaminants": [
+      "Free Chlorine (Aesthetic)",
+      "Calcium Carbonate"
+    ],
+    "health_risks": [
+      "Minor Skin/Eye Dryness"
+    ],
+    "needs_review": false,
+    "language": "en"
+  },
+  {
+    "id": "rep-lhr-3",
+    "created_at": "2026-07-08T17:45:00.000Z",
+    "country": "Pakistan",
+    "city": "Lahore",
+    "location_description": "Johar Town, Block G",
+    "display_name": "Dr. Farhan",
+    "description": "Using groundwater extraction here. Replaced our reverse osmosis membrane and found thick, rusty scale. Tested the inlet water, and TDS is over 1200 ppm with high arsenic traces. Please avoid drinking raw groundwater without proper double filtration.",
+    "image_url": null,
+    "safety_score": 3,
+    "verdict": "HIGH ARSENIC & TOTAL DISSOLVED SOLIDS",
+    "color_detected": "Mostly Clear with Rust Deposits",
+    "contaminants": [
+      "Arsenic",
+      "Iron Oxide",
+      "High Hardness"
+    ],
+    "health_risks": [
+      "Arsenicosis",
+      "Digestive distress",
+      "Kidney stones"
+    ],
+    "needs_review": true,
+    "language": "en"
+  }
+]

@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Nastaliq+Urdu:wght@400;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-title: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #eff6ff;
+  color: #1e3a8a;
+  overflow-x: hidden;
+}
+
+/* Custom premium card design for the Vibrant Palette theme */
+.bg-white {
+  background-color: #ffffff !important;
+  border-radius: 32px !important; /* Premium curved organic corners */
+  border: 3px solid #dbeafe !important; /* Thicker light-blue outline */
+  box-shadow: 0 20px 25px -5px rgba(191, 219, 254, 0.45), 0 10px 10px -5px rgba(191, 219, 254, 0.35) !important; /* Soft, intense blue drop shadows */
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+#drag-drop-area {
+  border-style: dashed !important;
+  border-width: 3px !important;
+  border-color: #93c5fd !important;
+  background-color: #ffffff !important;
+}
+
+#drag-drop-area:hover {
+  border-color: #3b82f6 !important;
+  background-color: #f0f7ff !important;
+}
+
+.bg-white:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 25px 30px -5px rgba(191, 219, 254, 0.6), 0 15px 15px -5px rgba(191, 219, 254, 0.4) !important;
+}
+
+/* Custom button classes to give them a thick high-contrast shadow and scale action */
+button.bg-blue-600, .bg-blue-600 {
+  box-shadow: 0 12px 20px -3px rgba(37, 99, 235, 0.35) !important;
+  transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.1) !important;
+}
+
+button.bg-blue-600:hover, .bg-blue-600:hover {
+  transform: translateY(-1px) scale(1.02);
+  box-shadow: 0 16px 24px -3px rgba(37, 99, 235, 0.45) !important;
+}
+
+button.bg-emerald-500, .bg-emerald-500 {
+  box-shadow: 0 12px 20px -3px rgba(16, 185, 129, 0.3) !important;
+  transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.1) !important;
+}
+
+button.bg-emerald-500:hover, .bg-emerald-500:hover {
+  transform: translateY(-1px) scale(1.02);
+  box-shadow: 0 16px 24px -3px rgba(16, 185, 129, 0.4) !important;
+}
+
+/* Custom class for authentic Nastaliq Urdu typography */
+body.locale-ur {
+  font-family: 'Noto Nastaliq Urdu', 'Inter', serif;
+}
+
+body.locale-ur button,
+body.locale-ur select,
+body.locale-ur input,
+body.locale-ur textarea {
+  font-family: 'Noto Nastaliq Urdu', 'Inter', serif;
+}
+
+/* Base fade-in keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Hide scrollbar utility */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

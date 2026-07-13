@@ -1,0 +1,6 @@
+{
+  "name": "AquaCheck",
+  "description": "AI-powered water safety checker and global water quality database",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
