@@ -8,10 +8,10 @@ import path from 'path';
 import fs from 'fs';
 import dotenv from 'dotenv';
 import { createServer as createViteServer } from 'vite';
-import { analyzeWaterImage, getCitySummary, getCityProjectionNarrative, answerWaterQuery } from './src/lib/gemini.ts';
-import { getCityData, calculateProjection, getRawWaterData, setCitiesInMemoryCache, updateCityInMemoryCache } from './src/lib/cityData.ts';
-import { CommunityReport, ReportSubmission } from './src/types/report.ts';
-import { CityWaterData } from './src/types/city.ts';
+import { analyzeWaterImage, getCitySummary, getCityProjectionNarrative, answerWaterQuery } from './src/lib/gemini.js';
+import { getCityData, calculateProjection, getRawWaterData, setCitiesInMemoryCache, updateCityInMemoryCache } from './src/lib/cityData.js';
+import { CommunityReport, ReportSubmission } from './src/types/report.js';
+import { CityWaterData } from './src/types/city.js';
 import { 
   isFirebaseEnabled, 
   getCityFromFirestore, 
@@ -19,7 +19,7 @@ import {
   getAllCitiesFromFirestore, 
   getReportsFromFirestore, 
   saveReportToFirestore 
-} from './src/lib/firebase.ts';
+} from './src/lib/firebase.js';
 
 // Load environment variables
 dotenv.config();
