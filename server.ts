@@ -500,19 +500,23 @@ async function initializeDatabase() {
 }
 
 async function startServer() {
-  // Initialize and seed Firestore database
-  await initializeDatabase();
+  try {
+    await initializeDatabase();
+  } catch (error) {
+    console.error('[Server] Database initialization failed, continuing with local files:', error);
+  }
 
   if (process.env.NODE_ENV !== 'production') {
-    // Create Vite server in middleware mode
-    const vite = await createViteServer({
-      server: { middlewareMode: true },
-      appType: 'spa',
-    });
-    // Use vite's connect instance as middleware
-    app.use(vite.middlewares);
+    try {
+      const vite = await createViteServer({
+        server: { middlewareMode: true },
+        appType: 'spa',
+      });
+      app.use(vite.middlewares);
+    } catch (error) {
+      console.error('[Server] Vite initialization failed:', error);
+    }
   } else {
-    // Serve static files in production
     const distPath = path.join(process.cwd(), 'dist');
     app.use(express.static(distPath));
     app.get('*', (req, res) => {
@@ -520,15 +524,17 @@ async function startServer() {
     });
   }
 
-  if (!process.env.VERCEL) {
+  if (process.env.VERCEL) {
+    console.log('[AquaCheck AI Server] Running in Vercel Serverless environment.');
+  } else {
     app.listen(PORT, '0.0.0.0', () => {
       console.log(`[AquaCheck AI Server] Running on http://localhost:${PORT}`);
     });
-  } else {
-    console.log('[AquaCheck AI Server] Running in Vercel Serverless environment.');
   }
 }
 
-startServer();
+startServer().catch((error) => {
+  console.error('[Server] Fatal startup error:', error);
+});
 
 export default app;
